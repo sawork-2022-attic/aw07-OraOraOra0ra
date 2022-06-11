@@ -19,7 +19,7 @@ import java.util.function.Consumer;
 
 @SpringBootApplication
 @EnableEurekaClient
-@MapperScan("com.micropos.delivery.dao")
+@MapperScan("com.micropos.delivery.mapper")
 public class DeliveryApplication {
     private static final Logger log = LoggerFactory.getLogger(DeliveryApplication.class);
 
@@ -33,14 +33,11 @@ public class DeliveryApplication {
         SpringApplication.run(DeliveryApplication.class, args);
     }
 
-//    @Bean
-//    Consumer<String> sms() {
-//        return log::info;
-//    }
 
     @Bean
     Consumer<Order> create() {
         return order -> {
+            System.out.println("9999999");
             DeliveryDto deliveryDto = new DeliveryDto();
             deliveryDto.setOrderId(order.getId());
             deliveryDto.setStatus(DeliveryDto.StatusEnum.CREATED);

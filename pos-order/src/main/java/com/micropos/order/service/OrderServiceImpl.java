@@ -29,7 +29,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Long createOrder(OrderDto orderDto) {
-        System.out.println("44444444444");
         ObjectMapper objectMapper = new ObjectMapper();
         String cart = null;
         try {
@@ -42,8 +41,9 @@ public class OrderServiceImpl implements OrderService {
         order.setTotal(orderDto.getTotal());
         order.setCart(cart.getBytes(StandardCharsets.UTF_8));
         orderMapper.insert(order);
-
+        System.out.println("44444444444");
         streamBridge.send("create-in-0", order);
+        System.out.println("5555555555");
         return order.getId();
     }
 

@@ -1,7 +1,7 @@
 package com.micropos.delivery.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.micropos.delivery.dao.DeliveryMapper;
+import com.micropos.delivery.mapper.DeliveryMapper;
 import com.micropos.delivery.dto.DeliveryDto;
 import com.micropos.delivery.model.Delivery;
 import org.springframework.stereotype.Component;
